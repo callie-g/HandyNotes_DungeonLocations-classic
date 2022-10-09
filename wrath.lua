@@ -2,6 +2,8 @@ local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes", true)
 if not HandyNotes then return end
 local L = LibStub("AceLocale-3.0"):GetLocale("HandyNotes_DungeonLocations (Classic)")
 
+local LibQTip = LibStub('LibQTip-1.0')
+
 local iconDefault = "Interface\\Addons\\HandyNotes_DungeonLocations (Classic)\\dungeon.tga"
 local icons = { }
 
@@ -213,12 +215,14 @@ function pluginHandler:OnEnter(uiMapId, coord)
 	
 	if (not nodeData) then return end
 	
-	local tooltip = self:GetParent() == WorldMapButton and WorldMapTooltip or GameTooltip
-	if ( self:GetCenter() > UIParent:GetCenter() ) then -- compare X coordinate
-		tooltip:SetOwner(self, "ANCHOR_LEFT")
-	else
-		tooltip:SetOwner(self, "ANCHOR_RIGHT")
-	end
+	--local tooltip = self:GetParent() == WorldMapButton and WorldMapTooltip or GameTooltip
+	--if ( self:GetCenter() > UIParent:GetCenter() ) then -- compare X coordinate
+	--	tooltip:SetOwner(self, "ANCHOR_LEFT")
+	--else
+	--	tooltip:SetOwner(self, "ANCHOR_RIGHT")
+	--end
+	local tooltip = LibQTip:Acquire("HandyNotes_DungeonLocations", 2, "LEFT", "RIGHT")
+	self.tooltip = tooltip
 
     if (not nodeData.name) then return end
 
@@ -227,20 +231,26 @@ function pluginHandler:OnEnter(uiMapId, coord)
 	for i, v in pairs(instances) do
 		if DUNGEON_DATA[v]then
 			if DUNGEON_DATA[v].recommendedLevelRange then
-				tooltip:AddLine(v .. '     [' .. DUNGEON_DATA[v].recommendedLevelRange .. ']')
+				tooltip:AddLine(v, '[' .. DUNGEON_DATA[v].recommendedLevelRange .. ']')
 			elseif DUNGEON_DATA[v].meetingStone then
-				tooltip:AddLine(v .. '     [' .. DUNGEON_DATA[v].meetingStone .. ']')
+				tooltip:AddLine(v, '[' .. DUNGEON_DATA[v].meetingStone .. ']')
 			elseif DUNGEON_DATA[v].minimumLevel then
-				tooltip:AddLine(v .. '     [' .. DUNGEON_DATA[v].minimumLevel .. ']')
+				tooltip:AddLine(v, '[' .. DUNGEON_DATA[v].minimumLevel .. ']')
 			end
 		else
-			tooltip:AddLine(v, nil, nil, nil, false)
+			tooltip:AddLine(v)
 		end
 	end
+	tooltip:SmartAnchorTo(self)
 	tooltip:Show()
 end
 
 function pluginHandler:OnLeave(mapFile, coord)
+	if self.tooltip then
+		LibQTip:Release(self.tooltip)
+		self.tooltip = nil
+		return
+	end
 	if self:GetParent() == WorldMapButton then
 		WorldMapTooltip:Hide()
 	else
