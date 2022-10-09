@@ -8,5 +8,6 @@
 ## RequiredDeps: HandyNotes
 ## SavedVariables: HandyNotes_DungeonLocationsClassicDB
 
+libs\LibQTip-1.0\LibQTip-1.0.lua
 locales\wrath\Locales.xml
 wrath.lua
