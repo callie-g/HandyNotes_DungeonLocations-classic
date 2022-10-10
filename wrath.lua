@@ -114,7 +114,7 @@ local DUNGEON_DATA = {
 		recommendedLevelRange = '60',
 	},
 	[L["Naxxramas"]] = {
-		minimumLevel = 60,
+		minimumLevel = 80,
 	},
 	[L["Hellfire Ramparts"]] = {
 		recommendedLevelRange = '60-62',
@@ -191,13 +191,76 @@ local DUNGEON_DATA = {
 	[L["Sunwell Plateau"]] = {
 		recommendedLevelRange = '70',
 	},
+	[L["Utgarde Keep"]] = {
+		recommendedLevelRange = '70-72',
+	},
+	[L["Azjol-Nerub"]] = {
+		recommendedLevelRange = '72-74',
+	},
+	[L["Ahn'kahet: The Old Kingdom"]] = {
+		recommendedLevelRange = '73-75',
+	},
 	[L["The Nexus"]] = {
 		recommendedLevelRange = '71-73',
 	},
+	[L["Drak'Tharon Keep"]] = {
+		recommendedLevelRange = '74-76',
+	},
+	[L["The Violet Hold"]] = {
+		recommendedLevelRange = '75-77',
+	},
+	[L["Gundrak"]] = {
+		recommendedLevelRange = '76-78',
+	},
+	[L["Halls of Stone"]] = {
+		recommendedLevelRange = '77-79',
+	},
+	[L["Halls of Lightning"]] = {
+		recommendedLevelRange = '79-80',
+	},
 	[L["The Oculus"]] = {
+		recommendedLevelRange = '79-80',
+	},
+	[L["Utgarde Pinnacle"]] = {
+		recommendedLevelRange = '79-80',
+	},
+	[L["The Culling of Stratholme"]] = {
+		recommendedLevelRange = '79-80',
+	},
+	[L["Trial of the Champion"]] = {
+		recommendedLevelRange = '79-80',
+	},
+	[L["The Forge of Souls"]] = {
+		recommendedLevelRange = '79-80',
+	},
+	[L["Pit of Saron"]] = {
+		recommendedLevelRange = '79-80',
+	},
+	[L["Halls of Reflection"]] = {
+		recommendedLevelRange = '79-80',
+	},
+	[L["Trial of the Crusader"]] = {
+		recommendedLevelRange = '80',
+	},
+	[L["The Obsidian Sanctum"]] = {
+		recommendedLevelRange = '80',
+	},
+	[L["The Ruby Sanctum"]] = {
+		recommendedLevelRange = '80',
+	},
+	[L["Ulduar"]] = {
 		recommendedLevelRange = '80',
 	},
 	[L["The Eye of Eternity"]] = {
+		recommendedLevelRange = '80',
+	},
+	[L["Icecrown Citadel"]] = {
+		recommendedLevelRange = '80',
+	},
+	[L["Vault of Archavon"]] = {
+		recommendedLevelRange = '80',
+	},
+	[L["Onyxia's Lair"]] = {
 		recommendedLevelRange = '80',
 	},
 }
@@ -769,10 +832,7 @@ nodes[1423] = { -- EasternPlaguelands
 		name = L["Stratholme"],
 		type = "Dungeon",
 	}, -- Stratholme World 52902870
-	[39002600] = { -- Naxxramas
-		name = L["Naxxramas"],
-		type = "Raid",
-	},
+	--[39002600] = { -- Naxxramas		name = L["Naxxramas"],		type = "Raid",	}, Fairly sure this is gone now
 }
 nodes[1444] = { -- Feralas
 	 [77063695] = {
@@ -1204,7 +1264,7 @@ nodes[113] = { -- Northrend
  --[80407600] = { 285,  type = "Dungeon", false, 286 }, -- Utgarde Keep, Utgarde Pinnacle CONTINENT MERGE Location is slightly incorrect
  [47501750] = {
   id = { 757, 284 },
-  name = L["Trial of the Crusader"] .. '\n' .. L["Trial of the Champion"],
+  name = L["Trial of the Champion"] .. '\n' .. L["Trial of the Crusader"],
   type = "Mixed",
   showOnContinent = true,
  }, -- Trial of the Crusader and Trial of the Champion
