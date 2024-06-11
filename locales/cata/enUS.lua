@@ -118,3 +118,23 @@ L["The Obsidian Sanctum"] = true
 L["The Forge of Souls"] = true
 L["The Culling of Stratholme"] = true
 L["The Oculus"] = true
+
+-- Cataclysm
+
+L["Throne of Tides"] = true
+L["Blackrock Caverns"] = true
+L["Lost City of the Tol'vir"] = true
+L["The Stonecore"] = true
+L["Well of Eternity"] = true
+L["Halls of Origination"] = true
+L["The Vortex Pinnacle"] = true
+L["Grim Batol"] = true
+L["Hour of Twilight"] = true
+L["End Time"] = true
+
+L["Baradin Hold"] = true
+L["The Bastion of Twilight"] = true
+L["Throne of the Four Winds"] = true
+L["Blackwing Descent"] = true
+L["Firelands"] = true
+L["Dragon Soul"] = true

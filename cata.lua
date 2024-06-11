@@ -263,6 +263,55 @@ local DUNGEON_DATA = {
 	[L["Onyxia's Lair"]] = {
 		recommendedLevelRange = '80',
 	},
+	
+	[L["Throne of Tides"]] = {
+		recommendedLevelRange = '80-90',
+	},
+	[L["Blackrock Caverns"]] = {
+		recommendedLevelRange = '80-90',
+	},
+	[L["The Stonecore"]] = {
+		recommendedLevelRange = '81-90',
+	},
+	[L["The Vortex Pinnacle"]] = {
+		recommendedLevelRange = '81-90',
+	},
+	[L["Grim Batol"]] = {
+		recommendedLevelRange = '84-90',
+	},
+	[L["Halls of Origination"]] = {
+		recommendedLevelRange = '84-90',
+	},
+	[L["Lost City of the Tol'vir"]] = {
+		recommendedLevelRange = '84-90',
+	},
+	[L["End Time"]] = {
+		recommendedLevelRange = '85',
+	},
+	[L["Well of Eternity"]] = {
+		recommendedLevelRange = '85',
+	},
+	[L["Hour of Twilight"]] = {
+		recommendedLevelRange = '85',
+	},
+	[L["Baradin Hold"]] = {
+		recommendedLevelRange = '85+',
+	},
+	[L["The Bastion of Twilight"]] = {
+		recommendedLevelRange = '85+',
+	},
+	[L["Throne of the Four Winds"]] = {
+		recommendedLevelRange = '85+',
+	},
+	[L["Blackwing Descent"]] = {
+		recommendedLevelRange = '85+',
+	},
+	[L["Firelands"]] = {
+		recommendedLevelRange = '85++',
+	},
+	[L["Dragon Soul"]] = {
+		recommendedLevelRange = '85+++',
+	},
 }
 
 local pluginHandler = { }
@@ -277,7 +326,13 @@ function pluginHandler:OnEnter(uiMapId, coord)
 	end
 	
 	if (not nodeData) then return end
-
+	
+	--local tooltip = self:GetParent() == WorldMapButton and WorldMapTooltip or GameTooltip
+	--if ( self:GetCenter() > UIParent:GetCenter() ) then -- compare X coordinate
+	--	tooltip:SetOwner(self, "ANCHOR_LEFT")
+	--else
+	--	tooltip:SetOwner(self, "ANCHOR_RIGHT")
+	--end
 	local tooltip = LibQTip:Acquire("HandyNotes_DungeonLocations", 2, "LEFT", "RIGHT")
 	self.tooltip = tooltip
 
@@ -643,11 +698,11 @@ nodes[1440] = { -- Ashenvale
  }, -- Blackfathom Deeps, not at portal but look
 }
 nodes[1418] = { -- Badlands
-	[44531212] = { 
+	[41801130] = { 
 		name = L["Uldaman"],
 		type = "Dungeon",
 	}, -- Uldaman
-	[65054337] = { 
+	[58463690] = { 
 		name = L["Uldaman"],
 		type = "Dungeon",
 	}, -- Uldaman (Secondary Entrance)
@@ -772,26 +827,26 @@ minimap[1415] = {-- Eastern Kingdoms
 		name = L["The Temple of Atal'hakkar"],
 		type = "Dungeon",
 	},
-	[53855766] = {
+	[60683744] = {
 		name = L["Uldaman"],
 		type = "Dungeon",
 	},
-	[56156003] = {
+	[60683744] = {
 		name = L["Uldaman"],
 		type = "Dungeon", -- Side entrance
 	},
 }
 
 nodes[1427] = {
-	[34708600]= {
-		name = L["Blackrock Depths"] ..'\n' .. L["Blackrock Spire"] .. '\n' .. L["Blackwing Lair"] .. '\n' .. L["Molten Core"],
+	[41708580]= {
+		name = L["Blackrock Depths"] ..'\n' .. L["Blackrock Spire"] .. '\n' .. L["Blackwing Lair"] .. '\n' .. L["Molten Core"] .. '\n' .. L["Blackrock Caverns"] .. '\n' .. L["Blackwing Descent"],
 		type = "Mixed",
 		hideOnContinent = true,
 	},
 }
 
 nodes[1428] = { -- BurningSteppes
-	[29944778] = {
+	[20303260] = {
 		name = L["Blackrock Depths"] ..'\n' .. L["Blackrock Spire"] .. '\n' .. L["Blackwing Lair"] .. '\n' .. L["Molten Core"],
 		type = "Mixed", 
 	}, -- Blackrock mountain dungeons and raids
@@ -846,7 +901,7 @@ nodes[1444] = { -- Feralas
 }
 
 nodes[1454] = { -- Orgrimmar
-	[51604983] = { -- 52405800
+	[52405800] = { -- 52405800
 		name = L["Ragefire Chasm"],
 		type = "Dungeon",
 	}, -- Ragefire Chasm Cleft of Shadow 70104880
@@ -877,7 +932,7 @@ nodes[1421] = { -- Silverpine
 	},
 	]]--
 nodes[1453] = { -- StormwindCity
-	[50486638] = {
+	[50406640] = {
 		name = L["The Stockade"],
 		type = "Dungeon",
 	}, -- The Stockade
@@ -1051,9 +1106,45 @@ minimap[1944] = { -- Hellfire
   type = "Raid",
  }, -- Magtheridon's Lair World 56705270, Old 47505210.  Adjusted for clarity
 }
+
+nodes[75] = { -- CavernsofTime
+ [57608260] = {
+  id = 279,
+  type = "Dungeon",
+ }, -- The Culling of Stratholme
+ [36008400] = {
+  id = 255,
+  type = "Dungeon",
+ }, -- The Black Morass
+ [26703540] = {
+  id = 251,
+  type = "Dungeon",
+ }, -- Old Hillsbrad Foothills
+ [35601540] = {
+  id = 750,
+  type = "Raid",
+ }, -- The Battle for Mount Hyjal
+ [57302920] = {
+  id = 184,
+  type = "Dungeon",
+ }, -- End Time
+ [22406430] = {
+  id = 185,
+  type = "Dungeon",
+ }, -- Well of Eternity
+ [67202930] = {
+  id = 186,
+  type = "Dungeon",
+ }, -- Hour of Twilight
+ [61702640] = {
+  id = 187,
+  type = "Raid",
+ }, -- Dragon Soul
+}
+
 nodes[1446] = { -- CavernsofTime
  [65654992] = {
-	name = L["The Black Morass"] .. "\n" .. L["Old Hillsbrad Foothills"] .. "\n" .. L["The Battle for Mount Hyjal"] .. "\n" .. L["The Culling of Stratholme"],
+	name = L["The Black Morass"] .. "\n" .. L["Old Hillsbrad Foothills"] .. "\n" .. L["The Battle for Mount Hyjal"] .. "\n" .. L["The Culling of Stratholme"] .. '\n' .. L["End Time"] .. '\n' .. L["Well of Eternity"] .. '\n' .. L["Hour of Twilight"] .. '\n' .. L["Dragon Soul"],
 	type = "Mixed",
   },
  }
@@ -1275,61 +1366,61 @@ end
 if (not self.db.profile.hideCata) then
 nodes[207] = { -- Deepholm
  [47405210] = {
-  id = 67,
+  name = L["The Stonecore"],
   type = "Dungeon",
  }, -- The Stonecore (Maelstrom: 51002790)
 }
 nodes[198] = { -- Hyjal
  [47307810] = {
-  id = 78,
+  name = L["Firelands"],
   type = "Raid",
  }, -- Firelands
 }
 nodes[244] = { -- TolBarad
  [46104790] = {
-  id = 75,
+  name = L["Baradin Hold"],
   type = "Raid",
  }, -- Baradin Hold
 }
 nodes[241] = { -- TwilightHighlands
  [19105390] = {
-  id = 71,
+  name = L["Grim Batol"],
   type = "Dungeon",
  }, -- Grim Batol World 53105610
  [34007800] = {
-  id = 72,
+  name = L["The Bastion of Twilight"],
   type = "Raid",
  }, -- The Bastion of Twilight World 55005920
 }
 nodes[249] = { -- Uldum
  [76808450] = {
-  id = 68,
+  name = L["The Vortex Pinnacle"],
   type = "Dungeon",
  }, -- The Vortex Pinnacle
  [60506430] = {
-  id = 69,
+  name = L["Lost City of the Tol'vir"],
   type = "Dungeon",
  }, -- Lost City of Tol'Vir
  [69105290] = {
-  id = 70,
+  name = L["Halls of Origination"],
   type = "Dungeon",
  }, -- Halls of Origination
  [38308060] = {
-  id = 74,
+  name = L["Halls of Origination"],
   type = "Raid",
  }, -- Throne of the Four Winds
 }
 nodes[1527] = { -- Uldum
  [76808450] = {
-  id = 68,
+  name = L["The Vortex Pinnacle"],
   type = "Dungeon",
  }, -- The Vortex Pinnacle
  [60506430] = {
-  id = 69,
+  name = L["Lost City of the Tol'vir"],
   type = "Dungeon",
  }, -- Lost City of Tol'Vir
  [69105290] = {
-  id = 70,
+  name = L["Halls of Origination"],
   type = "Dungeon",
  }, -- Halls of Origination
  --[[[38308060] = {
@@ -1340,14 +1431,14 @@ nodes[1527] = { -- Uldum
 }
 nodes[203] = { -- Vashjir
  [48204040] =  {
-  id = 65,
+  name = L["Throne of Tides"],
   type = "Dungeon",
   hideOnContinent = true,
  }, -- Throne of Tides
 }
 nodes[204] = { -- VashjirDepths
  [69302550] = {
-  id = 65,
+  name = L["Throne of Tides"],
   type = "Dungeon",
  }, -- Throne of Tides
 }
