@@ -1,4 +1,4 @@
-## Interface: 20501
+## Interface: 50500
 ## Title: HandyNotes: DungeonLocations (Classic)
 ## Version: @project-version@
 ## Notes: Shows locations of dungeon and raid entrances
@@ -8,5 +8,6 @@
 ## RequiredDeps: HandyNotes
 ## SavedVariables: HandyNotes_DungeonLocationsClassicDB
 
-locales\bcc\Locales.xml
-bcc.lua
+libs\LibQTip-1.0\LibQTip-1.0.lua
+locales\mists\Locales.xml
+mists.lua
