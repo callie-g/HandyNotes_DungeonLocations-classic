@@ -1,3 +1,4 @@
+package-as: HandyNotes_DungeonLocations (Classic)
 enable-nolib-creation: no
 
 externals:
