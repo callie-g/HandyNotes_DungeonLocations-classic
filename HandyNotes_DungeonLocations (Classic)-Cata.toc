@@ -1,4 +1,4 @@
-## Interface: 40400
+## Interface: 40402
 ## Title: HandyNotes: DungeonLocations (Classic)
 ## Version: @project-version@
 ## Notes: Shows locations of dungeon and raid entrances

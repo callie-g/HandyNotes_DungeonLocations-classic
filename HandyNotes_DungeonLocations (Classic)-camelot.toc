@@ -1,6 +1,6 @@
-## Interface: 16001,11403
+## Interface: 16001
 ## Title: HandyNotes: DungeonLocations (Forever)
-## Version: 1.09b
+## Version: @project-version@
 ## Notes: Shows locations of old world dungeon and raid entrances
 ## Author: Callie
 ## X-Curse-Project-ID: 323067
